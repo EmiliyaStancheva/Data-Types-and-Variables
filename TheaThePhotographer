@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Thea_the_Photographer
+{
+    class TheaThePhotographer
+    {
+        static void Main(string[] args)
+        {
+            int totalPicture = int.Parse(Console.ReadLine());
+            int filterTime = int.Parse(Console.ReadLine());
+            int filterFactor = int.Parse(Console.ReadLine());
+            int uploadTime = int.Parse(Console.ReadLine());
+
+            long filteredPicture = (long)Math.Ceiling(totalPicture * filterFactor / 100.0);
+            long totalPicture1 = totalPicture * filterTime;
+            long filteredPicture1 = filteredPicture * uploadTime;
+            long totalTime = totalPicture1 + filteredPicture1;
+            long day = totalTime / 86400;
+            long hours = (totalTime - day * 86400)/3600;
+            long minutes = (totalTime - day * 86400 - hours * 3600) / 60;
+            long seconds = totalTime - day * 86400 - hours * 3600 - minutes*60;
+            Console.Write("{0}:", day);
+            if (hours < 10)
+            {
+                Console.Write("{0:00}:", hours);
+            }
+            else
+            Console.Write("{0}:", hours);
+
+            if (minutes < 10)
+            {
+                Console.Write("{0:00}", minutes);
+            }
+            else
+                Console.Write("{0}:", minutes);
+
+            if (seconds < 10)
+            {
+                Console.Write("{0:00}", seconds);
+            }
+            else
+                Console.Write("{0}:", seconds);
+            Console.Read();
+        }
+    }
+}
