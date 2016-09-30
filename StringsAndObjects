@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _6.Strings_and_Objects
+{
+    class StringsAndObjects
+    {
+        static void Main(string[] args)
+        {
+            string input1 = "Hello";
+            string input2 = "World";
+            string input3 = input1 + " " + input2;
+            string input4=$"{ input3}";
+            Console.WriteLine(input4);
+            Console.Read();
+        }
+    }
+}
